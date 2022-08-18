@@ -82,7 +82,7 @@ namespace Task_53_Hospital
             Console.WriteLine("Введите наименование болезни: ");
             string disease = Console.ReadLine();
 
-            var certainIlls = _ills.Where(x => x.Disease == disease);
+            var certainIlls = _ills.Where(ill => ill.Disease == disease);
 
             foreach (var ill in certainIlls)
             {
@@ -94,13 +94,13 @@ namespace Task_53_Hospital
 
         private void SortByName()
         {
-            var sortedIlls = _ills.OrderBy(x => x.Name).ToList();
+            var sortedIlls = _ills.OrderBy(ill => ill.Name).ToList();
             _ills = sortedIlls;
         }
 
         private void SortByAge()
         {
-            var sortedIlls = _ills.OrderBy(x => x.Age).ToList();
+            var sortedIlls = _ills.OrderBy(ill => ill.Age).ToList();
             _ills = sortedIlls;
         }
 
